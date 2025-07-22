@@ -63,7 +63,7 @@ namespace DiaryApp.Migrations
                         new
                         {
                             Id = 3,
-                            Content = "This is the content of the third diary entry.",
+                            Content = "This is content of the third diary entry.",
                             Creation = new DateTime(2025, 7, 22, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Third Entry"
                         });
