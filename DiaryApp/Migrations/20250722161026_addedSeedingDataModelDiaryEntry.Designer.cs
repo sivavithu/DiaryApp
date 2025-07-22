@@ -4,6 +4,7 @@ using DiaryApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiaryApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250722161026_addedSeedingDataModelDiaryEntry")]
+    partial class addedSeedingDataModelDiaryEntry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,21 +53,21 @@ namespace DiaryApp.Migrations
                         {
                             Id = 1,
                             Content = "This is the content of the first diary entry.",
-                            Creation = new DateTime(2025, 7, 22, 9, 0, 0, 0, DateTimeKind.Unspecified),
+                            Creation = new DateTime(2025, 7, 22, 21, 40, 25, 569, DateTimeKind.Local).AddTicks(5820),
                             Title = "First Entry"
                         },
                         new
                         {
                             Id = 2,
                             Content = "This is the content of the second diary entry.",
-                            Creation = new DateTime(2025, 7, 22, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Creation = new DateTime(2025, 7, 22, 21, 40, 25, 569, DateTimeKind.Local).AddTicks(6030),
                             Title = "Second Entry"
                         },
                         new
                         {
                             Id = 3,
                             Content = "This is the content of the third diary entry.",
-                            Creation = new DateTime(2025, 7, 22, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            Creation = new DateTime(2025, 7, 22, 21, 40, 25, 569, DateTimeKind.Local).AddTicks(6031),
                             Title = "Third Entry"
                         });
                 });
