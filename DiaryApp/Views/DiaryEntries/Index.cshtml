@@ -1,1 +1,33 @@
-﻿hello and welcome to diary entries index
+﻿@model List<DiaryEntry>
+
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Contents</th>
+				<th>Date</th>
+				<th>Action</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(var entry in Model)
+				{
+					<tr>
+						<td>@entry.Title</td>
+						<td>@entry.Content</td>
+						<td>@entry.Creation.ToString("yyyy-MM-dd")</td>
+						<td>
+							<a class="btn btn-primary" href="@Url.Action("Edit", "DiaryEntries", new { id = entry.Id })">Edit</a>
+							<a class="btn btn-danger" href="@Url.Action("Delete", "DiaryEntries", new { id = entry.Id })">Delete</a>
+						</td>
+					</tr>
+			}
+)
+			</tbody>
+
+
+		</table>
+
+	</div>
